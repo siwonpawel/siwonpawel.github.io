@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Page.Title }}</title>
+</head>
+<body>
+  {{ with site.Menus.main }}
+    <nav class="menu">
+      {{ range . }}
+        {{ if $.IsMenuCurrent .Menu . }}
+          <a class="active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
+        {{ else }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+  {{ end }}
+  {{ .Content }}
+  <br />
+  List: {{ .Kind }}
+
+  {{ range .Pages.ByDate }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  {{ end }}
+</body>
+</html>
