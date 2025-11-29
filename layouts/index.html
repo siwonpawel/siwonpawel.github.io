@@ -34,8 +34,6 @@
     {{ end }}
   </nav>
 {{ end }}
-  <footer>
-    <p>Version: {{ site.Params.version }}</p>
-  </footer>
+  {{ partial "footer.html" . }}
 </body>
 </html>

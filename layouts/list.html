@@ -24,8 +24,6 @@
   {{ range .Pages.ByDate }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
   {{ end }}
-  <footer>
-    <p>Version: {{ site.Params.version }}</p>
-  </footer>
+  {{ partial "footer.html" . }}
 </body>
 </html>
