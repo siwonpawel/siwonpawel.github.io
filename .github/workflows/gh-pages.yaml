@@ -85,15 +85,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          file: ./Containerfile
           tags: ${{ vars.DOCKER_REPOSITORY }}:latest,${{ vars.DOCKER_REPOSITORY }}:${{ github.run_id }}
-      # - name: Log in to Docker Hub
-      #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-      # - name: Build Docker image
-      #   run: docker build -t ${{ secrets.DOCKER_USERNAME }}/hugo-site:latest .
-
-      # - name: Push Docker image
-      #   run: docker push ${{ secrets.DOCKER_USERNAME }}/hugo-site:latest
   
   deploy:
     environment:
