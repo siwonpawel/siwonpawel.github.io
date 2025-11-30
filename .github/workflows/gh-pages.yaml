@@ -87,6 +87,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
           file: ./Containerfile
           tags: ${{ vars.DOCKER_REPOSITORY }}:latest,${{ vars.DOCKER_REPOSITORY }}:${{ github.run_id }}
