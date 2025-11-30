@@ -70,6 +70,13 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: github-pages
+          path: .
+      
+      - name: List files
+        run: ls -la
+
+      - name: Create public directory
+        run: mkdir ./public
 
       - name: Extract artifact
         run: tar -xvf artifact.tar -C ./public
