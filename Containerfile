@@ -1,5 +1,5 @@
 FROM docker.io/joseluisq/static-web-server:2-alpine
-COPY ./public /public
+COPY ./public /home/sws/public
 
 ENV SERVER_PORT=8080
 ENV SERVER_LOG_LEVEL=info
