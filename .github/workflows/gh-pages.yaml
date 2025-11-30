@@ -70,7 +70,7 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: github-pages
-          path: ./artifact.tar
+          path: .
 
       - name: Extract artifact
         run: tar -xvf ./artifact.tar -C ./public
