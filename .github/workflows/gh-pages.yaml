@@ -70,7 +70,10 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: github-pages
-          path: ./public
+          path: ./artifact.tar
+
+      - name: Extract artifact
+        run: tar -xvf ./artifact.tar -C ./public
 
       - name: Docker meta
         id: meta
